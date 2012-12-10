@@ -19,13 +19,13 @@ $ ->
 
 
 
-$ ->
-  $.mobile.ajaxEnabled = false
-  $.mobile.linkBindingEnabled = false
-  $.mobile.hashListeningEnabled = false
-  $.mobile.pushStateEnabled = false
-  $("div[data-role=\"page\"]").live "pagehide", (event, ui) ->
-    $(event.currentTarget).remove()
+#$ ->
+#  $.mobile.ajaxEnabled = false
+#  $.mobile.linkBindingEnabled = false
+#  $.mobile.hashListeningEnabled = false
+#  $.mobile.pushStateEnabled = false
+#  $("div[data-role=\"page\"]").live "pagehide", (event, ui) ->
+#    $(event.currentTarget).remove()
 
   # Try HTML5 geolocation
 

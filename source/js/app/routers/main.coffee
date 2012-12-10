@@ -6,4 +6,4 @@ class App.Routers.main extends Backbone.Router
   initialize: ->
 
   index: ->
-    @view = new App.Views.Markers({el:"#content"})
+    @view = new App.Views.Markers({el:"#content1"})
