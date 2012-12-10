@@ -11,9 +11,10 @@ class App.Views.Markers extends Backbone.View
     @render()
 
   events:
-    'click .something': 'click'
+    'click .add-message': 'click'
 
   click: ->
+    alert "fuck!"
 
   addOne: (marker) ->
     map = @map
