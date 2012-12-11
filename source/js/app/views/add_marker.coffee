@@ -11,12 +11,12 @@ class App.Views.AddMarker extends Backbone.View
     e.preventDefault()
     text = $(".text").val()
     name = $(".name").val()
-    message = "the message of #{name}: #{text}"
-    console.log message, window.pos.$a
+    message = "#{name}: #{text}"
+    console.log message, window.position.coords.latitude, window.position.coords.longitude
     $.ajax
       type: "POST"
       url: "http://geo-backend.herokuapp.com/messages"
-      data: {message: {text: message, latitude: window.pos.$a, longitude: window.pos.ab}}
+      data: {message: {text: message, latitude: window.position.coords.latitude, longitude: window.position.coords.longitude}}
       success: ->
         alert "New message: #{data}"
     Backbone.history.navigate "", true

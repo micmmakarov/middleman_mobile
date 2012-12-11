@@ -7,6 +7,7 @@ class App.Routers.main extends Backbone.Router
 
   initialize: ->
     navigator.geolocation.getCurrentPosition ((position) ->
+      window.position = position
       window.pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
     ), ->
       handleNoGeolocation true

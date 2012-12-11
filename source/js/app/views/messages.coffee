@@ -56,11 +56,11 @@ class App.Views.Markers extends Backbone.View
     navigator.geolocation.getCurrentPosition ((position) ->
       pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
       map.setCenter pos
-      marker = new google.maps.InfoWindow(
-        map: map
-        position: pos
-        content: "<span class='message'>I am here. Wanna type message.</span>"
-        visible:true
-      )
+      #marker = new google.maps.InfoWindow(
+      #  map: map
+      #  position: pos
+      #  content: "<span class='message'>I am here. Wanna type message.</span>"
+      #  visible:true
+      #)
     ), ->
       handleNoGeolocation true
