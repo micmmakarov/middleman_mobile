@@ -1,28 +1,30 @@
 class App.Views.Markers extends Backbone.View
 
   initialize: ->
+    #alert "fuck!"
+
     @collection = new App.Collections.Markers()
     @collection.fetch({add: true, dataType:'jsonp'})
-    window.c = @collection
-#      data: $.param({search: event.target.value})
     @collection.on 'reset', @render, @
     @collection.on 'add', @addOne, @
-    #@collection.fetch()
     @render()
 
   events:
     'click .add-message': 'click'
 
-  click: ->
+  click: (e) ->
+    e.preventDefault()
+
     alert "fuck!"
+    return false
+
+  click_button: (b) ->
+    b.preventDefault()
 
   addOne: (marker) ->
     map = @map
     pos = new google.maps.LatLng(marker.get('latitude'), marker.get('longitude'))
-
     info = new google.maps.InfoWindow(
-      #map: map
-      #position: pos
       content: marker.get('text')
     )
     marker = new google.maps.Marker(
@@ -30,7 +32,6 @@ class App.Views.Markers extends Backbone.View
       position: pos
       content: marker.get('text')
     )
-
     google.maps.event.addListener marker, "click", ->
       info.open map, marker
 
@@ -38,8 +39,7 @@ class App.Views.Markers extends Backbone.View
     #($ "#images-table").append view.render().el
 
   render: ->
-    #@$el.html HandlebarsTemplates['messages']()
-    @$el.html Handlebars.compile($("#page_1").html())
+    @$el.html Handlebars.compile($("#main-page").html())
     google.maps.event.addDomListener window, "load", @loadMap()
     @collection.each(@addOne, @)
     @

@@ -6,80 +6,35 @@
     %title= data.page.title || "The Middleman"
     %link{:href => "https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.css", :rel => "stylesheet"}/
     %script{:src => "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"}
-    = stylesheet_link_tag "normalize", "map", "mobile"
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"}
-    %script{:src => "https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.js"}
+    = stylesheet_link_tag "map", "bootstrap.min",  "bootstrap-responsive"
     = javascript_include_tag "main"
   %body{:class => page_classes}
-    #page1{"data-role" => "page", "data-theme" => "d"}
-      %div{"data-role" => "header", "data-theme" => "a"}
-        %h3 Rails School
-      %div{"data-role" => "content"}
-        #map_canvas
-        %a{"data-icon" => "plus", "data-iconpos" => "right", "data-role" => "button", "data-transition" => "slide", :href => "#page2"}
-          Add my message
-        %div{"data-iconpos" => "top", "data-role" => "navbar"}
-          %ul
-            %li
-              %a{"data-icon" => "", "data-theme" => "", "data-transition" => "slide", :href => "#page3"}
-                View All Messages
-            %li
-              %a{"data-icon" => "", "data-theme" => "", "data-transition" => "fade", :href => "#page4"}
-                Info
-      %div{"data-position" => "fixed", "data-role" => "footer", "data-theme" => "a"}
-        %h3
-          Rails School
-    / Add Message
-    #page2{"data-role" => "page"}
-      %div{"data-role" => "header", "data-theme" => "a"}
-        %h3
-          Add Message
-        %a.ui-btn-left{"data-role" => "button", "data-transition" => "slide", :href => "#page1"}
-          Back
-      %div{"data-role" => "content"}
-        %div
-          %p
-            %b
-              You will write a nice message and the message will be linked to your current
-              geolocation
-        %div{"data-role" => "fieldcontain"}
-          %fieldset{"data-role" => "controlgroup"}
-            %label{:for => "textinput2"}
-              Your name
-            %input#textinput2{:name => "", :placeholder => "", :type => "text", :value => ""}
-        %div{"data-role" => "fieldcontain"}
-          %fieldset{"data-role" => "controlgroup"}
-            %label{:for => "textarea2"}
-              Your nice message
-            %textarea#textarea2{:name => "", :placeholder => ""}
-        %a.add-message{"data-icon" => "plus", "data-iconpos" => "left", "data-role" => "button", :href => "#page2"}
-          Add Message
-      %div{"data-position" => "fixed", "data-role" => "footer", "data-theme" => "a"}
-        %h3
-          Rails School
-    / All Messages
-    #page3{"data-role" => "page"}
-      %div{"data-role" => "header", "data-theme" => "a"}
-        %a.ui-btn-left{"data-role" => "button", "data-transition" => "slide", :href => "#page1"}
-          Back
-        %h3
-          All Messages
-      %div{"data-role" => "content"}
-      %div{"data-position" => "fixed", "data-role" => "footer", "data-theme" => "a"}
-        %h3
-          Rails School
-    / Info
-    #page4{"data-role" => "page"}
-      %div{"data-role" => "content"}
-    :javascript
-      //App custom javascript
-
-
-
-
-
-
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "#"} Rails school Messages
+          .nav-collapse.collapse
+            %ul.nav
+              %li.active
+                %a{:href => "#"} Home
+              %li
+                %a{:href => "#all"} All messages
+              %li
+                %a{:href => "#add"} New Message
+    %br
+    %br
     #content
+
+
+
+
+
+
+
 
 
 

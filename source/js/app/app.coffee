@@ -12,18 +12,13 @@ window.App =
   Views: {}
   init: ->
     @router = new App.Routers.main()
-    Backbone.history.start({pushState: true})
+    Backbone.history.start()
 
 $ ->
   App.init()
 
 
 
-#$ ->
-#  $.mobile.ajaxEnabled = false
-#  $.mobile.linkBindingEnabled = false
-#  $.mobile.hashListeningEnabled = false
-#  $.mobile.pushStateEnabled = false
 #  $("div[data-role=\"page\"]").live "pagehide", (event, ui) ->
 #    $(event.currentTarget).remove()
 

@@ -1,5 +1,32 @@
-%script#header{:type => "text/x-handlebars-template"}
-  %h1 Header
+%script#main-page{:type => "text/x-handlebars-template"}
+  #map_canvas
+  .container-fluid
+    .row-fluid
+      %p
+        You can add you message, and this app will use
+        %br your geo-location uses HTML5
+      %a.btn.btn-large.btn-primary{:href => '#new'}
+        Add my message
 
 
+%script#add-marker{:type => "text/x-handlebars-template"}
+  .container-fluid
+    .row-fluid
+      %form
+        %fieldset
+          %legend Add a new nice message
+          %label Your name
+          %input.name{:placeholder => "What's your name", :type => "text"}
+          %label Your message
+          %textarea.text{:placeholder => "A nice message please", :type => "text"}
+          %br
+          %button.btn.btn-large.post-message Post my message
+
+%script#all-markers{:type => "text/x-handlebars-template"}
+  .container-fluid
+    .row-fluid
+      #markers
+%script#marker{:type => "text/x-handlebars-template"}
+  %p message:
+  %h2 {{text}}
 
