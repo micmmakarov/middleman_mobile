@@ -11,6 +11,7 @@ class App.Views.AddMarker extends Backbone.View
     e.preventDefault()
     text = $(".text").val()
     name = $(".name").val()
+
     message = "#{name}: #{text}"
     console.log message, window.position.coords.latitude, window.position.coords.longitude
     $.ajax

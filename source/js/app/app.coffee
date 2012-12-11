@@ -10,6 +10,7 @@ window.App =
   Collections: {}
   Routers: {}
   Views: {}
+
   init: ->
     @router = new App.Routers.main()
     Backbone.history.start()
