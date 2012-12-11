@@ -50,6 +50,9 @@ class App.Views.Markers extends Backbone.View
       mapTypeId: google.maps.MapTypeId.ROADMAP
     @map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions)
     map = @map
+    if navigator.geolocation
+    else
+      alert "problems with browser to detect your location"
     navigator.geolocation.getCurrentPosition ((position) ->
       pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
       map.setCenter pos
