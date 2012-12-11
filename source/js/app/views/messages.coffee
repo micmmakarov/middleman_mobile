@@ -56,6 +56,7 @@ class App.Views.Markers extends Backbone.View
     navigator.geolocation.getCurrentPosition ((position) ->
       pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
       map.setCenter pos
+      window.map = map
       #marker = new google.maps.InfoWindow(
       #  map: map
       #  position: pos
